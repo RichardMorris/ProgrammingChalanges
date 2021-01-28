@@ -15,3 +15,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: make
       run: make
+    - name: execute
+      run: ./hello > hello.actual
+    - name: compare
+      run: diff -y hello.actual hello.expect
+      run: cmp hello.actual hello.expect
