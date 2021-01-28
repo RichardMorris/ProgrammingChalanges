@@ -17,6 +17,7 @@ jobs:
       run: make
     - name: execute
       run: ./hello > hello.actual
-    - name: compare
+    - name: diff
       run: diff -y hello.actual hello.expect
+    - name: compare
       run: cmp hello.actual hello.expect
